@@ -82,12 +82,7 @@ module.exports = {
 		new UglifyJSPlugin(),
 		new ExtractTextPlugin('style.css'),
 		new webpack.optimize.CommonsChunkPlugin({
-			name: 'app',
-			filename: 'app-[hash].min.js'
-		}),
-		new webpack.optimize.CommonsChunkPlugin({
-			name: 'admin',
-			filename: 'admin-[hash].min.js'
+			names: ['app', 'admin']
 		})
 	]
 };
