@@ -1,0 +1,1 @@
+webpackJsonp([0],[,function(e,i,n){"use strict";alert("hi friends!")}],[1]);
