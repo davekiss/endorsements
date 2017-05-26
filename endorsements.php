@@ -36,6 +36,10 @@ if ( ! class_exists( 'Endorsements' ) ) {
         self::$instance->_include_files();
 
         new Endorsements\CPT\Endorsement;
+
+        if ( is_admin() ) {
+          new \Endorsements\Backend\Metabox;
+        }
       }
 
       return self::$instance;
@@ -62,6 +66,10 @@ if ( ! class_exists( 'Endorsements' ) ) {
      */
     private function _include_files() {
       require_once ENDORSEMENTS_PATH . 'lib/core/post-types/endorsement.php';
+
+      if ( is_admin() ) {
+        require_once ENDORSEMENTS_PATH . 'lib/backend/metabox.php';
+      }
     }
   }
 }
