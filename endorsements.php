@@ -34,6 +34,8 @@ if ( ! class_exists( 'Endorsements' ) ) {
         self::$instance = new self;
         self::$instance->_define_constants();
         self::$instance->_include_files();
+
+        new Endorsements\CPT\Endorsement;
       }
 
       return self::$instance;
@@ -59,7 +61,7 @@ if ( ! class_exists( 'Endorsements' ) ) {
      * @return void
      */
     private function _include_files() {
-      return;
+      require_once ENDORSEMENTS_PATH . 'lib/core/post-types/endorsement.php';
     }
   }
 }
