@@ -40,7 +40,7 @@
         'query_var'         => true,
         'menu_icon'         => 'dashicons-admin-post',
         'show_in_rest'      => true,
-        'rest_base'         => 'endorsement',
+        'rest_base'         => 'endorsements',
         'rest_controller_class' => 'WP_REST_Posts_Controller',
       ) );
     }
