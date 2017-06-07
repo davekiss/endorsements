@@ -50,5 +50,8 @@ module.exports = {
 		new webpack.optimize.CommonsChunkPlugin({
 			names: ['frontend', 'backend']
 		})
-	]
+	],
+	resolve: {
+		modules: [path.resolve(__dirname, 'lib/app'), 'node_modules']
+	}
 };
