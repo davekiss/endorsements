@@ -46,12 +46,12 @@ module.exports = {
 	module: {
 		rules: [
 			{
-				test: /\.js$/,
+				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
 
 				options: {
-					presets: ['es2015']
+					presets: ['es2015', 'react']
 				}
 			},
 			{
