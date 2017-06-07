@@ -22,8 +22,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	entry: {
-		app: './src/app/app.js',
-		admin: './src/admin/admin.js'
+		frontend: './lib/app/entry/frontend/frontend.jsx',
+		backend: './lib/app/entry/backend/backend.jsx'
 	},
 
 	output: {
@@ -48,7 +48,7 @@ module.exports = {
 	plugins: [
 		new UglifyJSPlugin(),
 		new webpack.optimize.CommonsChunkPlugin({
-			names: ['app', 'admin']
+			names: ['frontend', 'backend']
 		})
 	]
 };
