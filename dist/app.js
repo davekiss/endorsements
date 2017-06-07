@@ -1,1 +1,1 @@
-webpackJsonp([0],[,function(e,i,n){"use strict";alert("hi friends!")}],[1]);
+webpackJsonp([0],{83:function(e,i,n){"use strict";alert("hi friends!")}},[83]);

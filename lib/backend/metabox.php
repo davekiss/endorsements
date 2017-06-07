@@ -6,6 +6,7 @@
 
     public function __construct() {
       add_action( 'add_meta_boxes_page', array( $this, 'add_meta_boxes' ) );
+      add_action( 'admin_enqueue_scripts', array( $this, 'load_backend_app' ) );
     }
 
     /**
@@ -24,6 +25,26 @@
     public function add_metabox($page) {
       echo 'Hello, friends!';
       return;
+    }
+
+    /**
+     * Loads the backend React app script if we are on the Edit Page screen in the WordPress admin.
+     * @param  string $hook pagename
+     * @return void
+     */
+    public function load_backend_app($hook) {
+      if ( $hook !== 'post.php' ) {
+        return;
+      }
+
+      global $post_type;
+
+      if ( $post_type !== 'page' ) {
+        return;
+      }
+
+      wp_register_script('endorsements', ENDORSEMENTS_URL . 'dist/admin.js', array(), false, true);
+      wp_enqueue_script('endorsements');
     }
 
   }
