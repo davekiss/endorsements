@@ -20,17 +20,6 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
  *
  */
 
-/*
- * We've enabled ExtractTextPlugin for you. This allows your app to
- * use css modules that will be moved into a separate CSS file instead of inside
- * one of your module entries!
- *
- * https://github.com/webpack-contrib/extract-text-webpack-plugin
- *
- */
-
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-
 module.exports = {
 	entry: {
 		app: './src/app/app.js',
@@ -49,38 +38,15 @@ module.exports = {
 				test: /\.jsx?$/,
 				exclude: /node_modules/,
 				loader: 'babel-loader',
-
 				options: {
 					presets: ['es2015', 'react']
 				}
-			},
-			{
-				test: /\.(scss|css)$/,
-
-				use: ExtractTextPlugin.extract({
-					use: [
-						{
-							loader: 'css-loader',
-							options: {
-								sourceMap: true
-							}
-						},
-						{
-							loader: 'sass-loader',
-							options: {
-								sourceMap: true
-							}
-						}
-					],
-					fallback: 'style-loader'
-				})
 			}
 		]
 	},
 
 	plugins: [
 		new UglifyJSPlugin(),
-		new ExtractTextPlugin('style.css'),
 		new webpack.optimize.CommonsChunkPlugin({
 			names: ['app', 'admin']
 		})
