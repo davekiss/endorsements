@@ -52,7 +52,9 @@ if ( ! class_exists( 'Endorsements' ) ) {
      * @return void
      */
     private function _define_constants() {
-      define( 'ENDORSEMENTS_URL',  plugin_dir_url(__FILE__) );
+      define( 'ENDORSEMENTS_DEV', true);
+      define( 'ENDORSEMENTS_URL',  ENDORSEMENTS_DEV ? 'http://localhost:8080/' : plugin_dir_url(__FILE__) );
+      define( 'ENDORSEMENTS_APP_ROOT_URL',  ENDORSEMENTS_DEV ? 'http://localhost:8080/' : plugin_dir_url(__FILE__) . 'dist/' );
       define( 'ENDORSEMENTS_PATH', plugin_dir_path(__FILE__) );
       define( 'ENDORSEMENTS_BASENAME', plugin_basename( __FILE__ ) );
       define( 'ENDORSEMENTS_VERSION', '1.0');

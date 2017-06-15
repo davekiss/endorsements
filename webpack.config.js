@@ -22,8 +22,8 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	entry: {
-		frontend: './lib/app/entry/frontend/frontend.jsx',
-		backend: './lib/app/entry/backend/backend.jsx'
+		frontend: ['./lib/app/utils/public_path.js', './lib/app/entry/frontend/frontend.jsx'],
+		backend: ['./lib/app/utils/public_path.js', './lib/app/entry/backend/backend.jsx']
 	},
 
 	output: {
@@ -53,5 +53,10 @@ module.exports = {
 	],
 	resolve: {
 		modules: [path.resolve(__dirname, 'lib/app'), 'node_modules']
+	},
+	devServer: {
+		headers: {
+			'Access-Control-Allow-Origin': '*'
+		}
 	}
 };

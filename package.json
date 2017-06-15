@@ -20,5 +20,8 @@
   },
   "description": "Add social proof to your site with this React-powered WordPress plugin.",
   "repository": "https://github.com/davekiss/endorsements",
-  "license": "GPL-3.0"
+  "license": "GPL-3.0",
+  "scripts": {
+    "start": "webpack-dev-server --hot"
+  }
 }

@@ -11,7 +11,7 @@ const Heading = styled.h1`
 const Title = () => {
   return (
     <Heading>
-      Hello from React, friend!
+      Hello from React, pals!
     </Heading>
   );
 };

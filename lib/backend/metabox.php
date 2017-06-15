@@ -43,7 +43,8 @@
         return;
       }
 
-      wp_register_script('endorsements', ENDORSEMENTS_URL . 'dist/backend.js', array(), false, true);
+      wp_register_script('endorsements', ENDORSEMENTS_APP_ROOT_URL . 'backend.js', array(), false, true);
+      wp_localize_script('endorsements', 'endorsementsBuildPath', ENDORSEMENTS_APP_ROOT_URL );
       wp_enqueue_script('endorsements');
     }
 
