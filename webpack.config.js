@@ -22,8 +22,16 @@ const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 module.exports = {
 	entry: {
-		frontend: ['./lib/app/utils/public_path.js', './lib/app/entry/frontend/frontend.jsx'],
-		backend: ['./lib/app/utils/public_path.js', './lib/app/entry/backend/backend.jsx']
+		frontend: [
+			'react-hot-loader/patch',
+			'./lib/app/utils/public_path.js',
+			'./lib/app/entry/frontend/frontend.jsx'
+		],
+		backend: [
+			'react-hot-loader/patch',
+			'./lib/app/utils/public_path.js',
+			'./lib/app/entry/backend/backend.jsx'
+		]
 	},
 
 	output: {
