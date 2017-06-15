@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const Container = styled.button`
@@ -17,10 +18,15 @@ cursor: pointer;
 
 const Button = (props) => {
   return (
-    <Container>
+    <Container onClick={props.handler}>
       {props.text}
     </Container>
   );
+};
+
+Button.propTypes = {
+	text: PropTypes.string.isRequired,
+	handler: PropTypes.func.isRequired
 };
 
 export default Button;
