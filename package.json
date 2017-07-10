@@ -1,5 +1,5 @@
 {
-  "name": "Endorsements",
+  "name": "field-notes",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Dave Kiss",
@@ -19,8 +19,8 @@
     "webpack-cli": "^1.3.3",
     "webpack-dev-server": "^2.4.5"
   },
-  "description": "Add social proof to your site with this React-powered WordPress plugin.",
-  "repository": "https://github.com/davekiss/endorsements",
+  "description": "Track the trails you've traversed using this React-powered WordPress plugin.",
+  "repository": "https://github.com/davekiss/field-notes",
   "license": "GPL-3.0",
   "scripts": {
     "start": "webpack-dev-server --hot"

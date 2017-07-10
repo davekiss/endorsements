@@ -15,23 +15,23 @@ class Metabox extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			endorsements: [],
+			trails: [],
 		};
 		this.handleClick = this.handleClick.bind(this);
 	}
 
 	handleClick(e) {
 		e.preventDefault();
-		const count = this.state.endorsements.length;
-		const endorsements = this.state.endorsements.concat(count + 1);
-		this.setState({endorsements});
+		const count = this.state.trails.length;
+		const trails = this.state.trails.concat(count + 1);
+		this.setState({trails});
 	}
 
 	render() {
 		return (
 			<Wrapper>
 				<Title />
-				<p>This page has {this.state.endorsements.length} endorsements.</p>
+				<p>This park has {this.state.trails.length} trails.</p>
 				<Button text="Add New" handler={this.handleClick} />
 			</Wrapper>
 		);

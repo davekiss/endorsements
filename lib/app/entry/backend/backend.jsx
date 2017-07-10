@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { AppContainer } from 'react-hot-loader'
 import App from 'containers/backend/App/App.jsx';
 
-const target = document.getElementById('endorsements');
+const target = document.getElementById('trails');
 
 const render = () => {
   ReactDOM.render(

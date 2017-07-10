@@ -1,4 +1,4 @@
-=== Endorsements ===
+=== Field Notes: a National Park Trail Guide ===
 Contributors: (this should be a list of wordpress.org userid's)
 Donate link: http://example.com/
 Tags: comments, spam
