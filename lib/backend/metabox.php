@@ -45,6 +45,12 @@
       }
 
       wp_register_script('field-notes', FIELD_NOTES_APP_ROOT_URL . 'backend.js', array(), false, true);
+
+      wp_localize_script( 'field-notes', 'fieldNotesAPI', array(
+        'endpoint' => esc_url_raw( rest_url() ),
+        'nonce' => wp_create_nonce( 'wp_rest' ),
+      ));
+
       wp_localize_script('field-notes', 'fieldNotesBuildPath', FIELD_NOTES_APP_ROOT_URL );
       wp_enqueue_script('field-notes');
     }
