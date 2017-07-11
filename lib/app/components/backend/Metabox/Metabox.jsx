@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
 
+import Client from 'utils/Client.js';
 import Title from 'components/backend/Title/Title.jsx';
 import Button from 'components/backend/Button/Button.jsx';
 
@@ -20,6 +21,14 @@ class Metabox extends Component {
 		this.handleClick = this.handleClick.bind(this);
 	}
 
+	componentDidMount() {
+		Client.posts().then( data => {
+			this.setState({trails: data});
+		}).catch( error => {
+			console.log(error);
+		});
+	}
+
 	handleClick(e) {
 		e.preventDefault();
 		const count = this.state.trails.length;
@@ -33,6 +42,13 @@ class Metabox extends Component {
 				<Title />
 				<p>This park has {this.state.trails.length} trails.</p>
 				<Button text="Add New" handler={this.handleClick} />
+				{
+					this.state.trails.map( trail => {
+						return (
+							<h2>{trail.title.rendered}</h2>
+						)
+					})
+				}
 			</Wrapper>
 		);
 	}
